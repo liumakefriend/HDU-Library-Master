@@ -13,11 +13,14 @@ def getInfo(trial, plan, resp):
 
 
 def run():
+    flag = 0
     api = UserInterface()
     master = api.master
     if api.run():
         planIndex = 0
         for plan in master.plans:
+            if flag != 0:
+                break
             planCode = master.planCode[planIndex]
             checkPoint = master.job["checkPoint"]
             
@@ -92,6 +95,7 @@ def run():
                 try:
                     if res["DATA"]["result"] != "fail":
                         isSuccess = True
+                        flag += 1
                     elif str(res["MESSAGE"]).startswith(MSG_INVALID_REQUEST):
                         print(f"[{getNowTime()}]plan[{planIndex}]={_planCode}] {res['MESSAGE']}，请更新你的仓库或提交issue！")
                         break
