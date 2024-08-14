@@ -163,6 +163,9 @@ class Master:
         
         queryRoomsRes = self.do_query(method='GET',url=url,toJson=True)
 
+        print("查询结果")
+        print(queryRoomsRes)
+        
         if queryRoomsRes is None:
             return None
         rawRooms = queryRoomsRes["content"]["children"][1]["defaultItems"]
