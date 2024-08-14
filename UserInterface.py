@@ -82,6 +82,11 @@ class UserInterface:
         try:
             num = 0
             mPlans = self.planParser(self.master.planCode)
+
+            print("before")
+            print(mPlans)
+            print(after)
+            
             for plan in mPlans:
                 print(plan)
                 
