@@ -85,7 +85,7 @@ class UserInterface:
 
             print("before")
             print(mPlans)
-            print(after)
+            print("after")
             
             for plan in mPlans:
                 print(plan)
