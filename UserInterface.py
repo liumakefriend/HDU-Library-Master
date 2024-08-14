@@ -66,7 +66,7 @@ class UserInterface:
         self.init()
         state = self.login()
         if len(self.master.plans) == 0:
-            print("hello world")
+            # print("hello world")
             print("初始化预约方案...")
             if self.addPlan():
                 self.master.saveConfig()
@@ -84,18 +84,17 @@ class UserInterface:
             num = 0
             mPlans = self.planParser(self.master.planCode)
 
-            print("before")
-            print(mPlans)
-            print("after")
-            
-            for plan in mPlans:
-                print(plan)
+            # print("before")
+            # print(mPlans)
+            # print("after")
                 
             if self.th.is_alive():
                 print("正在初始化楼层和座位信息...")
                 while self.th.is_alive():
                     sleep(0.1)
             numRooms = len(self.master.rooms)
+            for plan in mPlans:
+                print(plan)
             
             for _plan in mPlans:
                 roomName = _plan[0] # roomType
