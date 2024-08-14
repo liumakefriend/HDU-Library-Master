@@ -82,6 +82,9 @@ class UserInterface:
         try:
             num = 0
             mPlans = self.planParser(self.master.planCode)
+            for plan in mPlans:
+                print(plan)
+                
             if self.th.is_alive():
                 print("正在初始化楼层和座位信息...")
                 while self.th.is_alive():
