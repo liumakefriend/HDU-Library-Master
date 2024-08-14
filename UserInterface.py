@@ -122,6 +122,8 @@ class UserInterface:
                     print(floor)
                     if len(floor) > 0:
                         floorName = self.master.getFloorNameByRoomAndId(roomName, _plan[1]) # floorId2floorName
+                        print("floorName")
+                        print(floorName)
                         if floorName is None:
                             if retries == 0:
                                 raise Exception(f"{roomName}中楼层{_plan[1]}不存在")
