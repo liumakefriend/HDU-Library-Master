@@ -159,7 +159,10 @@ class Master:
     def __queryRooms(self):
         # 查询所有可用的房间类型，返回一个字典，键为房间名，值为房间对应的请求参数
         url = self.urls["query_rooms"]
+        print("查询房间URL" + " " + url)
+        
         queryRoomsRes = self.do_query(method='GET',url=url,toJson=True)
+
         if queryRoomsRes is None:
             return None
         rawRooms = queryRoomsRes["content"]["children"][1]["defaultItems"]
