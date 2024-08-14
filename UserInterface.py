@@ -66,6 +66,7 @@ class UserInterface:
         self.init()
         state = self.login()
         if len(self.master.plans) == 0:
+            print("hello world")
             print("初始化预约方案...")
             if self.addPlan():
                 self.master.saveConfig()
