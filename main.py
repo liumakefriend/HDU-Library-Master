@@ -16,7 +16,7 @@ def run():
     flag = 0
     api = UserInterface()
     master = api.master
-    print("code run in the main file")
+    # print("code run in the main file")
     
     if api.run():
         planIndex = 0
