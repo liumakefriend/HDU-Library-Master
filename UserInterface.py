@@ -103,15 +103,21 @@ class UserInterface:
                 roomName = self.master.getRoomNameByIndex(roomName)
                 room = self.master.rooms[roomName]
 
-                print(roomName + " " + room)
+                print(roomName)
+                print(room)
                 
                 retries = self.master.job["maxTrials"] + 5
                 delay = self.master.job['delay']
+
+                print(retries)
+                print(delay)
+                
                 floor = None
                 floorName = None
                 while retries >= 0:
                     retries -= 1
                     floor = self.master.getFloorNamesByRoom(roomName)
+                    print(floor)
                     if len(floor) > 0:
                         floorName = self.master.getFloorNameByRoomAndId(roomName, _plan[1]) # floorId2floorName
                         if floorName is None:
