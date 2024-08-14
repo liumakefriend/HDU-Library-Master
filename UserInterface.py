@@ -93,8 +93,8 @@ class UserInterface:
                 while self.th.is_alive():
                     sleep(0.1)
             numRooms = len(self.master.rooms)
-            for plan in mPlans:
-                print(plan)
+            # for plan in mPlans:
+                # print(plan)
             
             for _plan in mPlans:
                 roomName = _plan[0] # roomType
@@ -103,20 +103,22 @@ class UserInterface:
                 roomName = self.master.getRoomNameByIndex(roomName)
                 room = self.master.rooms[roomName]
 
+                print("roomName")
                 print(roomName)
+                
+                print("room")
                 print(room)
                 
                 retries = self.master.job["maxTrials"] + 5
                 delay = self.master.job['delay']
 
-                print(retries)
-                print(delay)
                 
                 floor = None
                 floorName = None
                 while retries >= 0:
                     retries -= 1
                     floor = self.master.getFloorNamesByRoom(roomName)
+                    print("floor")
                     print(floor)
                     if len(floor) > 0:
                         floorName = self.master.getFloorNameByRoomAndId(roomName, _plan[1]) # floorId2floorName
