@@ -102,6 +102,8 @@ class UserInterface:
                     raise Exception("房间类型不合法")
                 roomName = self.master.getRoomNameByIndex(roomName)
                 room = self.master.rooms[roomName]
+
+                print(roomName + " " + room)
                 
                 retries = self.master.job["maxTrials"] + 5
                 delay = self.master.job['delay']
