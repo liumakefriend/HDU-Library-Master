@@ -21,8 +21,8 @@ def run():
     if api.run():
         planIndex = 0
         for plan in master.plans:
-            if flag != 0:
-                break
+            # if flag != 0:
+                # break
             planCode = master.planCode[planIndex]
             checkPoint = master.job["checkPoint"]
             
